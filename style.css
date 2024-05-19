@@ -1,0 +1,298 @@
+body {
+    width: 100%;
+    background-color: white;
+    margin: 0px 0px 20px 0px;
+    box-sizing: border-box;
+
+}
+
+header {
+    height: 70 px;
+    width: 100%;
+    background-color: rgb(229, 239, 242);
+    border-bottom: 1.5px solid black;
+}
+
+.logo{
+    position: relative;
+}
+
+.logo_a{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%
+}
+
+
+.suuken {
+    font-size: 25px;
+    text-align: center;
+}
+
+.TUSkagura {
+    font-size: 17px;
+    text-align: center;
+}
+
+.pc-menu{
+    display: none;
+}
+
+.menu-btn {
+    position: fixed;
+    top: 0px;
+    right: 10px;
+    display: flex;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    z-index: 90;
+    background-color: rgb(229, 239, 242);
+    /* border: 1px solid black; */
+}
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background-color: black;
+    position: absolute;
+}
+.menu-btn span:before {
+    bottom: 8px;
+}
+.menu-btn span:after {
+    top: 8px;
+}
+
+#menu-btn-check:checked ~ .menu-btn span {
+    background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+}
+#menu-btn-check:checked ~ .menu-btn span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+#menu-btn-check:checked ~ .menu-btn span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+#menu-btn-check {
+    display: none;
+}
+
+.menu-content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 80;
+    background-color: rgb(229, 239, 242);
+}
+.menu-content ul {
+    padding: 70px 10px 0;
+}
+.menu-content ul li {
+    border-bottom: solid 1px black;
+    list-style: none;
+}
+.menu-content ul li a {
+    display: block;
+    width: 100%;
+    font-size: 15px;
+    box-sizing: border-box;
+    color: black;
+    text-decoration: none;
+    padding: 9px 15px 10px 0;
+    position: relative;
+}
+.menu-content ul li a::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-top: solid 2px black;
+    border-right: solid 2px black;
+    transform: rotate(45deg);
+    position: absolute;
+    right: 11px;
+    top: 16px;
+}
+
+.menu-content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 100%;/*leftの値を変更してメニューを画面外へ*/
+    z-index: 80;
+    background-color: rgb(229, 239, 242);
+    transition: all 0.5s;/*アニメーション設定*/
+}
+
+#menu-btn-check:checked ~ .menu-content {
+    left: 0;/*メニューを画面内へ*/
+}
+
+.content{
+    margin: 3% 5% 5% 5%;
+}
+
+h1{
+    font-size: 25px;
+    font-weight: 300;
+    padding: 0.1em 0.3em;
+    border-left: 10px solid lightblue;
+    border-radius: 5px;
+    background: #e3f2fd;
+    display: block;
+    margin-top: 0;
+    margin-bottom: 10px;
+    width: fit-content;
+}
+
+h2{
+    font-size: 15px;
+    font-weight: 300;
+    padding: 0.07em 0.2em;
+    border-left: 10px solid rgb(255, 210, 217);
+    border-radius: 5px;
+    background: #ffebee;
+    display: block;
+    margin-top: 5px 0 5px 0;
+    width: fit-content;
+}
+
+.tweet{
+    width: 50%;
+}
+
+
+
+table{
+    border-collapse: collapse;
+    border: solid 1px black;
+    width: 100%;
+}
+
+table th, table td {
+    border: solid 1px black;
+    text-align: center;
+}
+
+.table_label{
+    width: 30%;
+}
+
+
+
+
+
+
+@media screen and (min-width: 481px) {
+
+    body {
+        width: 100%;
+        background-color: white;
+        margin: 0 0px 20px 0px;
+        box-sizing: border-box;
+    }
+
+    header {
+        background: rgb(229, 239, 242);
+        height: 90px;
+        /* ここをかえるときはaタグのheightも変える */
+        margin-bottom: 10px;
+        border-bottom: solid 2px black;
+    }
+
+	.main-menu {
+        margin: 0 auto;
+        display: flex;
+        background: rgb(229, 239, 242);
+        width: 100%;
+
+        height: 100%;
+    }
+    
+    .logo {
+        text-align: center;
+        padding: 10px;
+        width: 50%;
+        margin-right: 0%;
+        background: rgb(229, 239, 242);
+    }
+    
+    .TUSkagura {
+        font-size: 17px;
+        text-align: center;
+    }
+
+    .suuken {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .sp-menu{
+        display: none;
+    }
+
+    .pc-menu {
+        display: block;
+        width: 100%;
+    }
+    .pc-menu > ul {
+        display: flex;
+        margin: 0;
+        height: 100%;
+        list-style: none;
+        padding: 0;
+    }
+    .pc-menu > ul > li {
+        width: 25%;
+        font-size: 17px; 
+        height: 100%;
+    }
+    .pc-menu > ul > li > a {
+        display: block;
+        height: 100%;
+        text-decoration: none;
+        color: #000000;
+        text-align: center;
+        line-height: 90px;
+    }
+    .pc-menu > ul > li > a:hover {
+        background: rgb(248, 253, 254);
+    }
+      
+    .content{
+        margin: 0 10% 0 10%;
+    }
+
+    .tweet{
+        width: 50%;
+    }
+
+    table{
+        border-collapse: collapse;
+        border: solid 1px black;
+        width: 500px;
+    }
+    
+    table th, table td {
+        border: solid 1px black;
+        text-align: center;
+        
+    }
+    
+    .table_label{
+        width: 100px;
+    }
+    
+}
